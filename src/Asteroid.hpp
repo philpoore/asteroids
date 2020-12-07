@@ -77,4 +77,11 @@ struct Asteroid {
         }
         return false;
     }
+
+    static Asteroid* newRandom(int size) {
+        v2 pos = {(float)random(pixelWidth), (float)random(pixelHeight)};
+        v2 vel = {randomf(0.1f) - 0.05f, randomf(0.1f) - 0.05f};
+
+        return new Asteroid(pos, vel, size);
+    }
 };

@@ -32,9 +32,21 @@ struct Bullet {
 
     void draw() {
         if (!alive) return;
-        glColor3f(1.0, 0.0, 0.0);
+        glColor3f(1.0, 1.0, 1.0);
         glBegin(GL_POINTS);
         glVertex2f(pos.x, pos.y);
         glEnd();
     }
 };
+
+void createBullet(v2 pos, v2 velocity, float dir) {
+    Bullet* bullet = new Bullet();
+      
+    bullet->pos = pos;
+    bullet->alive = true;
+    bullet->lifetime = 0;
+    bullet->velocity = velocity;
+    bullet->velocity.x += cos(deg2rad(dir)) * bulletVelocity;
+    bullet->velocity.y += sin(deg2rad(dir)) * bulletVelocity;
+    bullets.push_back(bullet);
+}

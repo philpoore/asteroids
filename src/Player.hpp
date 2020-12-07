@@ -60,23 +60,3 @@ struct Player {
         glPopMatrix();
     }
 };
-
-
-void createBullet(v2 pos, v2 velocity, float dir) {
-    Bullet* bullet = nullptr;
-    for (int i = 0; i < numBullets; i++) {
-        if (!bullets[i].alive) {
-            bullet = &bullets[i];
-        }
-    }
-    if (!bullet) {
-        bullet = &bullets[numBullets++];
-    }
-      
-    bullet->pos = pos;
-    bullet->alive = true;
-    bullet->lifetime = 0;
-    bullet->velocity = velocity;
-    bullet->velocity.x += cos(deg2rad(dir)) * bulletVelocity;
-    bullet->velocity.y += sin(deg2rad(dir)) * bulletVelocity;
-}
