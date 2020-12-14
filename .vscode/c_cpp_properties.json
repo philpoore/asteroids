@@ -4,6 +4,7 @@
             "name": "Linux",
             "includePath": [
                 "${workspaceFolder}/**",
+                "${workspaceFolder}/deps/irrKlang-64bit-1.6.0/include/**",
                 "/usr/include/**"
             ],
             "defines": [],

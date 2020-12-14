@@ -6,7 +6,7 @@
 #include "game.hpp"
 #include "Bullet.hpp"
 
-const static float turnSpeed = 1;
+const static float turnSpeed = 2;
 const static float velocityDecay = 0.99;
 const static float acceleration = 0.1;
 
